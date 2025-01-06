@@ -1,21 +1,11 @@
-dial = [
-    "ABC",
-    "DEF",
-    "GHI",
-    "JKL",
-    "MNO",
-    "PQRS",
-    "TUV",
-    "WXYZ",
-]
-
-time = 0
+dial = ["ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ"]
 
 word = input()
+time = 0
 
-for i in dial:
-    for j in word:
-        if j in i:
-            time += dial.index(i) + 2
+for char in word:
+    for idx, group in enumerate(dial):
+        if char in group:
+            time += idx + 3
 
-print(time + len(word))
+print(time)
